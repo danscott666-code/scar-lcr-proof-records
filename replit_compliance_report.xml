@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <scar_validator_version>1.0</scar_validator_version>
+  <manifest_schema_version>1.0</manifest_schema_version>
+  <validation_authority_version>v1.3</validation_authority_version>
+  <execution_standard_version>v1.4</execution_standard_version>
+  <validator_hash_at_init>7da40937cfa70524484498be5755e760a8915ab79cc915c5b80e6a884ed2f8f8</validator_hash_at_init>
+  <validator_hash_at_preflight>7da40937cfa70524484498be5755e760a8915ab79cc915c5b80e6a884ed2f8f8</validator_hash_at_preflight>
+  <validator_hash_at_postrun>7da40937cfa70524484498be5755e760a8915ab79cc915c5b80e6a884ed2f8f8</validator_hash_at_postrun>
+  <validator_hash_at_emit>7da40937cfa70524484498be5755e760a8915ab79cc915c5b80e6a884ed2f8f8</validator_hash_at_emit>
+  <validator_hash_consistent boolean="true">true</validator_hash_consistent>
+  <generated_at>2026-04-09T02:47:48.927285+00:00</generated_at>
+  <overall_status>PASS</overall_status>
+  <preflight>
+    <phase>PREFLIGHT</phase>
+    <status>PASS</status>
+    <timestamp>2026-04-09T02:47:48.880638+00:00</timestamp>
+    <total_violations number="true">0</total_violations>
+    <class_a number="true">0</class_a>
+    <class_b number="true">0</class_b>
+    <class_c number="true">0</class_c>
+    <violations empty-array="true"></violations>
+    <rule_trace>
+      <rule_id>R-PF-01</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">manifest</artefacts>
+      <note>Manifest loaded</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-02</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>manifest_schema_version=1.0</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-03</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>validation_authority_version=v1.3</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-04</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>execution_standard_version=v1.4</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-05</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>canonical doc name verified</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-06</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>authority SHA format valid</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-07</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Validator hash verified at preflight</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-08</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>domain=scripture</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-09</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>profile=hostile_audit</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-10</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>kappa_L=0.1</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-11</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>null_samples=100000 &gt;= floor=50000</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-12</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>alpha=0.05</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-13</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>fdr_method=BH</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-14</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>seed=1337</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-20</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>4 null model invariant(s) declared</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-15</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">USETHISQuran-uthmani_FIXED.txt</artefacts>
+      <note>Input 'quran_canonical_text' hash verified</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-16</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>1 operators declared and typed</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-17</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>optional_artefacts within profile scope</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-19</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Run directory exists</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PF-21</rule_id>
+      <phase>PREFLIGHT</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Schema contract verified: ARTEFACT_SCHEMAS matches SCHEMA_AUTHORITY_HASH (7ede1e7927bd31df...)</note>
+    </rule_trace>
+  </preflight>
+  <post_run>
+    <phase>POST_RUN</phase>
+    <status>PASS</status>
+    <timestamp>2026-04-09T02:47:48.892898+00:00</timestamp>
+    <total_violations number="true">0</total_violations>
+    <class_a number="true">0</class_a>
+    <class_b number="true">0</class_b>
+    <class_c number="true">0</class_c>
+    <violations empty-array="true"></violations>
+    <rule_trace>
+      <rule_id>R-GATE-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Preflight gate passed (call order + Class A)</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-00</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Validator hash unchanged: init ↔ preflight ↔ post-run</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-RT-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts>RUN_REPORT.json</artefacts>
+      <artefacts>OBSERVED_METRICS.json</artefacts>
+      <artefacts>NULL_METRICS.json</artefacts>
+      <artefacts>STATISTICS.json</artefacts>
+      <artefacts>COMPARISON.json</artefacts>
+      <artefacts>REPAIR_REPORT.json</artefacts>
+      <artefacts>FAILURE_SUMMARY.json</artefacts>
+      <artefacts>EXECUTION_BOUNDARY.lock.json</artefacts>
+      <note>Completion consistency confirmed: 6 stage(s) declared by runner, all 8 mandatory artefacts present and non-zero (preliminary size check only). Note: this proves declared-stage/artefact consistency, not that those stages actually executed &#x2014; a runner could declare stages without running them. Schema validation below provides the next layer of semantic enforcement.</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">COMPARISON.json</artefacts>
+      <note>Artefact present: COMPARISON.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">EXECUTION_BOUNDARY.lock.json</artefacts>
+      <note>Artefact present: EXECUTION_BOUNDARY.lock.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">FAILURE_SUMMARY.json</artefacts>
+      <note>Artefact present: FAILURE_SUMMARY.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">NULL_METRICS.json</artefacts>
+      <note>Artefact present: NULL_METRICS.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">OBSERVED_METRICS.json</artefacts>
+      <note>Artefact present: OBSERVED_METRICS.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">REPAIR_REPORT.json</artefacts>
+      <note>Artefact present: REPAIR_REPORT.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">RUN_REPORT.json</artefacts>
+      <note>Artefact present: RUN_REPORT.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-01</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">STATISTICS.json</artefacts>
+      <note>Artefact present: STATISTICS.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-SCHEMA</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">RUN_REPORT.json</artefacts>
+      <note>RUN_REPORT.json schema validated</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-SCHEMA</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">OBSERVED_METRICS.json</artefacts>
+      <note>OBSERVED_METRICS.json schema validated</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-SCHEMA</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">NULL_METRICS.json</artefacts>
+      <note>NULL_METRICS.json schema validated</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-SCHEMA</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">STATISTICS.json</artefacts>
+      <note>STATISTICS.json schema validated</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-SCHEMA</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">COMPARISON.json</artefacts>
+      <note>COMPARISON.json schema validated</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-SCHEMA</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">REPAIR_REPORT.json</artefacts>
+      <note>REPAIR_REPORT.json schema validated</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-SCHEMA</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">FAILURE_SUMMARY.json</artefacts>
+      <note>FAILURE_SUMMARY.json schema validated</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-SCHEMA</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">EXECUTION_BOUNDARY.lock.json</artefacts>
+      <note>EXECUTION_BOUNDARY.lock.json schema validated</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-SCHEMA</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">RERUN_BOUNDARY.lock.json</artefacts>
+      <note>RERUN_BOUNDARY.lock.json schema validated</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-02</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">RUN_REPORT.json</artefacts>
+      <note>validation_authority_version consistent</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-02</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">RUN_REPORT.json</artefacts>
+      <note>execution_standard_version consistent</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-03</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">RUN_REPORT.json</artefacts>
+      <note>status=PASS</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-04</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts>RUN_REPORT.json</artefacts>
+      <artefacts>FAILURE_SUMMARY.json</artefacts>
+      <note>Status/failure summary consistent</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-05</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">NULL_METRICS.json</artefacts>
+      <note>null_samples consistent: 100000 &gt;= 100000</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-06</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">OBSERVED_METRICS.json</artefacts>
+      <note>seed consistent</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-06</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">OBSERVED_METRICS.json</artefacts>
+      <note>alpha consistent</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-07</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">COMPARISON.json</artefacts>
+      <note>verdict valid: 'PASS'</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-07</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts>RUN_REPORT.json</artefacts>
+      <artefacts>COMPARISON.json</artefacts>
+      <note>status/verdict consistent</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-07</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">COMPARISON.json</artefacts>
+      <note>kappa_L consistent: 0.1</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-07</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">COMPARISON.json</artefacts>
+      <note>pass_condition present and non-blank: 'theta_observed &gt;= kappa_L AND admissible'</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-07</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts>COMPARISON.json</artefacts>
+      <artefacts>OBSERVED_METRICS.json</artefacts>
+      <note>theta_observed consistent: 1.2 (tolerance=1e-09)</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-07</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">STATISTICS.json</artefacts>
+      <note>fdr_method consistent: manifest and STATISTICS agree ('BH')</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-07</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">COMPARISON.json</artefacts>
+      <note>Threshold consistent: verdict='PASS', theta_observed=1.2, kappa_L=0.1 (tolerance=1e-09)</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-08</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">STATISTICS.json</artefacts>
+      <note>p_value present and in [0,1]: 1e-06</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-08</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">STATISTICS.json</artefacts>
+      <note>fdr_corrected present and in [0,1]: 1e-06</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-08</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>B</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">STATISTICS.json</artefacts>
+      <note>fdr_corrected plausibility passed: fdr_corrected=1e-06 &gt;= p_value=1e-06 for method='BH'</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-08</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">STATISTICS.json</artefacts>
+      <note>z_score present: 4.753424</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-08</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">STATISTICS.json</artefacts>
+      <note>effect_size present: 1.1</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-09</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">COMPARISON.json</artefacts>
+      <note>Hash verified: COMPARISON.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-09</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">FAILURE_SUMMARY.json</artefacts>
+      <note>Hash verified: FAILURE_SUMMARY.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-09</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">NULL_METRICS.json</artefacts>
+      <note>Hash verified: NULL_METRICS.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-09</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">OBSERVED_METRICS.json</artefacts>
+      <note>Hash verified: OBSERVED_METRICS.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-09</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">RUN_REPORT.json</artefacts>
+      <note>Hash verified: RUN_REPORT.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-09</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">STATISTICS.json</artefacts>
+      <note>Hash verified: STATISTICS.json</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-09</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Validator hash consistent: init/preflight/post-run/boundary</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-09</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Manifest hash consistent in boundary</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-09</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>B</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Runner hash present in boundary: df5ac88e72e0dcfc...</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-11</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Class B count 0 within profile limit 0</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-12</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Validator identity confirmed: primary and rerun used same validator (7da40937cfa70524...)</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-12</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Independent hash recomputation passed: all stable artefact hashes in both primary and rerun boundaries verified against disk</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-12</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Boundary stable artefact sets identical: 6 artefact(s) in both boundaries (excluded: ['EXECUTION_BOUNDARY.lock.json', 'RERUN_BOUNDARY.lock.json'])</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-12</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Manifest hash consistent across primary and rerun boundaries</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-12</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts empty-array="true"></artefacts>
+      <note>Input integrity confirmed: 1 manifest input(s) recomputed from current disk and match manifest declaration (disk-to-manifest only; no cross-run input evidence artefacts in this architecture)</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-12</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>B</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts array="true">RERUN_BOUNDARY.lock.json</artefacts>
+      <note>Rerun environment record present</note>
+    </rule_trace>
+    <rule_trace>
+      <rule_id>R-PR-12</rule_id>
+      <phase>POST_RUN</phase>
+      <cls>A</cls>
+      <result>PASS</result>
+      <blocking boolean="true">false</blocking>
+      <failure_effect>N/A</failure_effect>
+      <artefacts>EXECUTION_BOUNDARY.lock.json</artefacts>
+      <artefacts>RERUN_BOUNDARY.lock.json</artefacts>
+      <note>Determinism comparison passed under current boundary architecture: validator identity consistent, manifest hash consistent, 6 boundary-defined stable artefact hash(es) equal across boundaries, boundary hash declarations verified against current disk (shared run_dir), inputs match manifest declaration. Excluded from comparison: ['EXECUTION_BOUNDARY.lock.json', 'RERUN_BOUNDARY.lock.json'].</note>
+    </rule_trace>
+  </post_run>
+  <sign_off>
+    <overall_status>PASS</overall_status>
+    <class_a_total number="true">0</class_a_total>
+    <class_b_total number="true">0</class_b_total>
+    <profile_mode>hostile_audit</profile_mode>
+    <zero_class_a boolean="true">true</zero_class_a>
+    <zero_class_b boolean="true">true</zero_class_b>
+    <correct_profile boolean="true">true</correct_profile>
+    <validator_immutable boolean="true">true</validator_immutable>
+    <audit_grade_ready boolean="true">true</audit_grade_ready>
+    <hostile_audit_ready boolean="true">true</hostile_audit_ready>
+    <sign_off_verdict>HOSTILE_AUDIT_READY</sign_off_verdict>
+  </sign_off>
+  <summary>
+    <rules_checked number="true">76</rules_checked>
+    <rules_passed number="true">76</rules_passed>
+    <rules_failed number="true">0</rules_failed>
+  </summary>
+</root>
