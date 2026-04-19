@@ -1,0 +1,23 @@
+{
+  "name": "LCR_SCAR_CANONICAL_v1.0_FINAL",
+  "version": "1.0",
+  "status": "FROZEN",
+  "hash_algorithm": "SHA-256",
+  "hash": "93218bad0c770653bd7558dd20c8f7801aae76bdf064e0a24654b22aa806ee65",
+  "encoding": "UTF-8",
+  "bom": false,
+  "line_endings": "LF",
+  "bytes": 5765,
+  "created_by": "Danny Scott",
+  "date": "2026-04-19",
+  "notes": "Canonical LCR + SCAR + Transition Law specification",
+  "components": [
+    "LCR_CANON_v1.0",
+    "SCAR_Validation_Pack_v1.3",
+    "SCAR_Execution_Standard_v1.4",
+    "LCR_TRANSITION_LAW_v1.0"
+  ],
+  "external_anchors": [
+    "github.com/danscott666-code/scar-lcr-proof-records"
+  ]
+}

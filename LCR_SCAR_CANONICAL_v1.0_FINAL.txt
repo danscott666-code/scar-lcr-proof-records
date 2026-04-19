@@ -1,0 +1,276 @@
+LCR / SCAR INTEGRATED CANONICAL SPECIFICATION v1.0 — FINAL
+
+Status: FINAL — AUDIT GRADE (READY FOR FREEZE)
+Scope: Law of Coherent Revelation (LCR), SCAR Validation, Reconstruction Engine
+Purpose: Define a complete, reproducible system for coherence detection, validation, and lawful reconstruction
+
+---
+
+SECTION 1 — CORE LAW (LCR MASTER EQUATION)
+
+1.1 Domain
+
+A configuration (C) is any structured object, including:
+
+- text
+- graph
+- sequence
+- system state
+
+All configurations belong to the Configuration Space.
+
+---
+
+1.2 Structural Coherence
+
+S(C) = structural coherence score
+E(C) = structural energy = negative of S(C)
+
+---
+
+1.3 Null Model
+
+Let p(C) be the probability of observing C under the null model.
+
+H_eff(C) = negative log of p(C)
+
+The null model is a domain-appropriate, pre-defined probabilistic model representing unguided or random structure, as specified in the canonical null-model specification. All evaluations must use a fixed, declared, and reproducible null model.
+
+---
+
+1.4 Coherence Parameter
+
+Theta(C) = H_eff(C) divided by constant H0
+
+H0 is a fixed positive normalisation constant defined in the LCR core specification and held constant across all evaluations.
+
+---
+
+1.5 LCR Verdict
+
+A configuration passes if and only if:
+
+- All structural predicates B_k(u) hold
+- Anchor conditions are satisfied
+- Section-level constraints (gates and rings) hold
+- Theta(C) meets or exceeds threshold kappa_L
+
+This is a strict system:
+
+Any violation results in failure.
+
+---
+
+1.6 Referenced Definitions
+
+The following components are defined in canonical external LCR specifications and are treated as frozen:
+
+- B_k(u): unit-level structural predicates
+- Anchor conditions: presence-based constraint triggers
+- Gates: section-level propagation constraints
+- Rings: structural symmetry constraints
+- kappa_L: coherence threshold parameter
+
+The set of structural predicates B_k(u) is finite, fixed, and version-controlled within the canonical LCR specification.
+
+These definitions are not redefined in this document and must remain consistent with their canonical sources.
+
+---
+
+SECTION 2 — SCAR VALIDATION LAYER
+
+2.1 Purpose
+
+SCAR validates configurations against LCR under audit conditions.
+
+---
+
+2.2 Validation Pipeline
+
+Given input configuration C:
+
+1. Evaluate structural predicates B_k(u)
+2. Evaluate anchor conditions
+3. Evaluate section-level gates and rings
+4. Compute Theta(C)
+5. Apply threshold rule
+
+---
+
+2.3 Output Classification
+
+- PASS -> fully coherent (no violations)
+- PARTIAL -> non-critical violations only (no Class A failures)
+- FAIL -> structural failure
+
+---
+
+2.4 Determinism Requirement
+
+All evaluations must be:
+
+- reproducible
+- seed-fixed
+- hash-verifiable
+
+Where branching or multiple candidates are explored, determinism must be preserved through fixed seeds, deterministic ordering, and reproducible selection rules.
+
+---
+
+SECTION 3 — TRANSITION LAW (RECONSTRUCTION ENGINE)
+
+3.1 Definition
+
+A transformation T maps configuration C to a new configuration C'.
+
+---
+
+3.2 Objective
+
+Given configuration C:
+
+Find configuration C' such that:
+
+- Theta(C') is maximised
+- structural change from C to C' is minimised
+
+Change is measured using the structural distance function defined in Section 4.
+
+---
+
+3.3 Legal Transformations
+
+Allowed operations:
+
+- ADD
+- REMOVE
+- SWAP
+- REORDER
+- MERGE
+- SPLIT
+- SUBSTITUTE
+
+---
+
+3.4 Transformation Constraints
+
+A transformation is valid only if:
+
+1. Domain integrity is preserved
+2. Structural constraints are not violated
+3. No new meaning is invented
+4. Local validity is maintained
+
+---
+
+3.5 Candidate Generation
+
+From configuration C, generate candidate configurations by applying legal transformations.
+
+Candidate generation is constrained by transformation validity rules and pruning conditions to ensure finite and tractable search.
+
+---
+
+3.6 Search Process
+
+Iterative process:
+
+1. Start with initial configuration C0
+2. Generate candidate configurations
+3. Evaluate each candidate using Theta(C)
+4. Select the best candidate
+5. Repeat
+
+---
+
+3.7 Branching and Pruning
+
+- Explore multiple candidate configurations where applicable
+- Remove candidates that violate constraints or significantly reduce coherence
+
+---
+
+3.8 Convergence
+
+The system stops when:
+
+- improvement becomes negligible
+- no valid improvement exists
+- iteration limit is reached
+
+---
+
+3.9 Coherence Target
+
+Final configuration must:
+
+- satisfy all LCR constraints
+- achieve a locally maximal coherence score within the explored candidate space
+
+Note: Global maximum is not required or assumed.
+
+---
+
+SECTION 4 — DISTANCE AND MINIMISATION
+
+The system minimises change while improving coherence.
+
+Measures include:
+
+- edit distance (number of changes)
+- structural difference (topological or relational change)
+- bounded semantic deviation
+
+The objective is minimal change for maximal coherence improvement.
+
+---
+
+SECTION 5 — SAFETY CONSTRAINTS (CRITICAL)
+
+The system must NEVER:
+
+- fabricate information
+- guess missing meaning
+- override source truth
+- violate null-model assumptions
+
+The system may ONLY:
+
+- restore structural coherence
+- minimise distortion
+- enforce constraints
+
+---
+
+SECTION 6 — SYSTEM INTEGRATION
+
+The complete system operates as:
+
+1. LCR -> defines coherence law
+2. SCAR -> validates coherence
+3. Transition Law -> repairs incoherence
+
+---
+
+SECTION 7 — SUMMARY
+
+The system provides:
+
+- detection of non-random structure
+- validation under strict constraints
+- lawful reconstruction of degraded configurations
+
+without introducing false or unsupported content.
+
+---
+
+SECTION 8 — CANONICAL IDENTITY
+
+Name: LCR_SCAR_CANONICAL_v1.0_FINAL
+Status: FROZEN (READY FOR HASHING)
+Format: Plain-text, audit-safe
+Compatibility: Word, PDF, JSON translation-ready
+
+---
+
+END OF DOCUMENT
