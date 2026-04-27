@@ -1,0 +1,253 @@
+{
+  "spec_id": "SCAR_AI_AUTH_DS01_MEASUREMENT_SPEC",
+  "spec_sha256": "f84e335c0ca3f01d255aabc2f844852e15bc5e3366a7fbc31f2cb178843c07ba",
+  "run_timestamp": "2026-04-25T16:06:37.477667+00:00",
+  "samples_processed": 40,
+  "samples_admissible": 40,
+  "samples_non_admissible": 0,
+  "all_files_hashed": true,
+  "protocol_breach": false,
+  "dataset_decision": "PASS",
+  "sample_decisions": [
+    {
+      "sample_id": "S_A_P01_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.939829
+    },
+    {
+      "sample_id": "S_A_P01_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.795972
+    },
+    {
+      "sample_id": "S_A_P02_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.375328
+    },
+    {
+      "sample_id": "S_A_P02_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.580789
+    },
+    {
+      "sample_id": "S_A_P03_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.198531
+    },
+    {
+      "sample_id": "S_A_P03_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.866434
+    },
+    {
+      "sample_id": "S_A_P04_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 3.828459
+    },
+    {
+      "sample_id": "S_A_P04_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 4.031314
+    },
+    {
+      "sample_id": "S_A_P05_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 2.323716
+    },
+    {
+      "sample_id": "S_A_P05_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.814187
+    },
+    {
+      "sample_id": "S_A_P06_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.750728
+    },
+    {
+      "sample_id": "S_A_P06_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.793725
+    },
+    {
+      "sample_id": "S_A_P07_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.840752
+    },
+    {
+      "sample_id": "S_A_P07_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.044319
+    },
+    {
+      "sample_id": "S_A_P08_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.393114
+    },
+    {
+      "sample_id": "S_A_P08_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.470293
+    },
+    {
+      "sample_id": "S_A_P09_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.418139
+    },
+    {
+      "sample_id": "S_A_P09_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.817496
+    },
+    {
+      "sample_id": "S_A_P10_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.815242
+    },
+    {
+      "sample_id": "S_A_P10_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.048887
+    },
+    {
+      "sample_id": "S_H_P01_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.646112
+    },
+    {
+      "sample_id": "S_H_P01_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 5.036698
+    },
+    {
+      "sample_id": "S_H_P02_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 5.091175
+    },
+    {
+      "sample_id": "S_H_P02_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 3.145989
+    },
+    {
+      "sample_id": "S_H_P03_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 3.61445
+    },
+    {
+      "sample_id": "S_H_P03_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.959182
+    },
+    {
+      "sample_id": "S_H_P04_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 2.667361
+    },
+    {
+      "sample_id": "S_H_P04_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 5.504627
+    },
+    {
+      "sample_id": "S_H_P05_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 3.192145
+    },
+    {
+      "sample_id": "S_H_P05_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 2.273615
+    },
+    {
+      "sample_id": "S_H_P06_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 2.62839
+    },
+    {
+      "sample_id": "S_H_P06_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.696632
+    },
+    {
+      "sample_id": "S_H_P07_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.804572
+    },
+    {
+      "sample_id": "S_H_P07_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 2.894978
+    },
+    {
+      "sample_id": "S_H_P08_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 4.10425
+    },
+    {
+      "sample_id": "S_H_P08_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 3.886202
+    },
+    {
+      "sample_id": "S_H_P09_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.928107
+    },
+    {
+      "sample_id": "S_H_P09_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 0.28094
+    },
+    {
+      "sample_id": "S_H_P10_01",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 1.353406
+    },
+    {
+      "sample_id": "S_H_P10_02",
+      "admissible": true,
+      "violations": [],
+      "theta_ds01": 5.20524
+    }
+  ]
+}

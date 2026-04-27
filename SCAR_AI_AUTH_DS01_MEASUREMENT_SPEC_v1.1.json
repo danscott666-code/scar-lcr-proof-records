@@ -1,0 +1,234 @@
+{
+  "schema_version": "1.0",
+  "spec_id": "SCAR_AI_AUTH_DS01_MEASUREMENT_SPEC",
+  "dataset_id": "SCAR_AI_AUTH_DS01",
+  "status": "FROZEN_BEFORE_COLLECTION",
+  "text_preprocessing": {
+    "encoding": "utf-8",
+    "unicode_normalisation": "NFC",
+    "line_endings": "LF",
+    "strip_leading_trailing_whitespace": true,
+    "collapse_internal_whitespace": false,
+    "casefold": true,
+    "tokenisation": {
+      "word_rule": "split on whitespace",
+      "sentence_rule": "split on [.?!]+ with empty segments discarded",
+      "punctuation_retained_for_density": true
+    }
+  },
+  "feature_family": {
+    "surface_structure": [
+      "word_count",
+      "sentence_count",
+      "mean_sentence_length",
+      "sentence_length_variance",
+      "punctuation_density"
+    ],
+    "lexical_structure": [
+      "unique_word_ratio",
+      "repeated_word_rate",
+      "hapax_ratio",
+      "function_word_ratio"
+    ],
+    "local_coherence": [
+      "adjacent_sentence_overlap_mean",
+      "adjacent_sentence_overlap_variance",
+      "mid_text_lexical_echo"
+    ],
+    "recurrence_structure": [
+      "repeated_bigram_rate",
+      "repeated_trigram_rate",
+      "sentence_initial_token_recurrence",
+      "sentence_terminal_token_recurrence"
+    ],
+    "regularity_structure": [
+      "paragraph_count",
+      "paragraph_length_variance"
+    ]
+  },
+  "function_word_list": [
+    "the",
+    "a",
+    "an",
+    "and",
+    "or",
+    "but",
+    "if",
+    "then",
+    "than",
+    "that",
+    "this",
+    "these",
+    "those",
+    "to",
+    "of",
+    "for",
+    "in",
+    "on",
+    "at",
+    "by",
+    "with",
+    "from",
+    "as",
+    "is",
+    "are",
+    "was",
+    "were",
+    "be",
+    "been",
+    "being",
+    "it",
+    "its",
+    "their",
+    "there",
+    "they",
+    "them",
+    "he",
+    "she",
+    "we",
+    "you",
+    "i",
+    "my",
+    "our",
+    "your"
+  ],
+  "feature_definitions": {
+    "word_count": "Number of whitespace-delimited tokens.",
+    "sentence_count": "Number of non-empty sentence segments after sentence split.",
+    "mean_sentence_length": "word_count / sentence_count.",
+    "sentence_length_variance": "Population variance of sentence token counts.",
+    "punctuation_density": "Count of punctuation marks divided by character count.",
+    "unique_word_ratio": "Unique token count / total token count.",
+    "repeated_word_rate": "Tokens occurring more than once / total token count.",
+    "hapax_ratio": "Tokens occurring exactly once / total token count.",
+    "function_word_ratio": "Function-word token count / total token count.",
+    "adjacent_sentence_overlap_mean": "Mean Jaccard overlap of token sets for adjacent sentence pairs.",
+    "adjacent_sentence_overlap_variance": "Variance of adjacent sentence Jaccard overlaps.",
+    "mid_text_lexical_echo": "Jaccard overlap between first-half and second-half token sets.",
+    "repeated_bigram_rate": "Repeated bigram types / total bigram types.",
+    "repeated_trigram_rate": "Repeated trigram types / total trigram types.",
+    "sentence_initial_token_recurrence": "Most frequent sentence-initial token count / sentence_count.",
+    "sentence_terminal_token_recurrence": "Most frequent sentence-terminal token count / sentence_count.",
+    "paragraph_count": "Count of paragraphs separated by blank lines; if none, value = 1.",
+    "paragraph_length_variance": "Variance of paragraph word counts."
+  },
+  "null_model": {
+    "null_id": "DS01_WITHIN_SAMPLE_TOKEN_SHUFFLE_V1",
+    "purpose": "Estimate structural expectation under preserved lexical inventory and preserved length, while destroying sequential order.",
+    "preserves": [
+      "word_count",
+      "token_inventory",
+      "token_frequency_distribution",
+      "paragraph_count"
+    ],
+    "breaks": [
+      "sequential token order",
+      "sentence order",
+      "local recurrence placement",
+      "phrase recurrence structure",
+      "adjacent sentence overlap structure"
+    ],
+    "generation_method": {
+      "sentence_count_preserved": true,
+      "sentence_token_counts_preserved": true,
+      "method": "Flatten tokens, shuffle uniformly with fixed RNG seed stream, repartition into original sentence lengths in original sentence-count shape."
+    },
+    "null_samples_per_text": 1000,
+    "rng_seed_base": 1337,
+    "rng_seed_rule": "seed = rng_seed_base + sample_index_integer",
+    "sample_index_integer_definition": "Zero-based row index of the sample in SCAR_AI_AUTH_DS01_sample_index.json. S_H_P01_01 = 0, S_A_P10_02 = 39. Row order is fixed at file creation and must not be changed after collection begins.",
+    "rng_seed_rationale": "Seeds are arbitrary but fixed, chosen before collection begins. rng_seed_base 1337 and class_rng_seed 7331 are recorded here as pre-registered values. No optimisation of seed values was performed."
+  },
+  "sample_level_scoring": {
+    "score_id": "DS01_COMPOSITE_Z_V1",
+    "method": "For each feature, compute z-score of observed feature relative to null ensemble. Composite score = mean absolute z-score across selected coherence-sensitive features.",
+    "coherence_sensitive_features": [
+      "sentence_length_variance",
+      "adjacent_sentence_overlap_mean",
+      "adjacent_sentence_overlap_variance",
+      "mid_text_lexical_echo",
+      "repeated_bigram_rate",
+      "repeated_trigram_rate",
+      "sentence_initial_token_recurrence",
+      "sentence_terminal_token_recurrence"
+    ],
+    "composite_score_name": "theta_ds01",
+    "composite_formula": "mean(abs(z_i)) over coherence_sensitive_features"
+  },
+  "sample_level_admissibility": {
+    "minimum_sentence_count": 3,
+    "minimum_word_count": 180,
+    "maximum_word_count": 220,
+    "minimum_non_punctuation_characters": 500,
+    "admissibility_fail_if_any": [
+      "word_count_out_of_range",
+      "sentence_count_below_minimum",
+      "empty_text",
+      "hash_missing",
+      "file_missing"
+    ]
+  },
+  "class_level_analysis": {
+    "grouping_variable": "condition",
+    "groups": [
+      "human",
+      "ai"
+    ],
+    "primary_class_metric": "theta_ds01",
+    "secondary_class_metrics": [
+      "unique_word_ratio",
+      "function_word_ratio",
+      "adjacent_sentence_overlap_mean",
+      "repeated_bigram_rate"
+    ],
+    "comparison_method": "two-sided permutation test on difference in group means",
+    "permutation_samples": 10000,
+    "class_rng_seed": 7331,
+    "significance_threshold": 0.05,
+    "multiple_testing_correction": "none_for_primary_metric",
+    "secondary_metric_inference_policy": "Secondary metrics are descriptive in Dataset 01 unless a later version explicitly declares inferential use and a correction policy."
+  },
+  "decision_rules": {
+    "sample_level": {
+      "admissible": "sample passes all sample_level_admissibility rules",
+      "non_admissible": "sample fails any sample_level_admissibility rule"
+    },
+    "dataset_level": {
+      "PASS": [
+        "all 40 samples admissible",
+        "all required files hashed",
+        "rerun deterministic",
+        "class comparison completed without protocol breach"
+      ],
+      "PARTIAL": [
+        "execution valid but one or more samples replaced or flagged",
+        "deterministic run passes but class comparison inconclusive",
+        "dataset complete but class separation does not exceed null expectation"
+      ],
+      "FAIL": [
+        "protocol breach",
+        "hash inconsistency",
+        "manifest inconsistency",
+        "validator class A violation",
+        "rerun mismatch"
+      ]
+    }
+  },
+  "outputs_required": [
+    "sample_feature_table.json",
+    "sample_null_summary.json",
+    "class_comparison.json",
+    "COMPLIANCE_REPORT.json",
+    "EXECUTION_BOUNDARY.lock.json",
+    "RERUN_BOUNDARY.lock.json"
+  ],
+  "non_goals": [
+    "This dataset does not prove universal AI detection.",
+    "This dataset does not identify model family from output alone.",
+    "This dataset does not establish legal admissibility in all jurisdictions.",
+    "This dataset is a controlled transfer proof only."
+  ],
+  "notes": [
+    "Sentence segmentation is intentionally simplified for Dataset 01 and is treated as a frozen preprocessing approximation rather than a linguistic parser."
+  ]
+}

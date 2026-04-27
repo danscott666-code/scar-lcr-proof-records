@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "SCAR_AI_AUTH_DS01",
+  "file_role": "PROMPTS",
+  "description": "Ten fixed prompts used to elicit both human and AI responses. Each prompt is held constant across both conditions. Target response length: 180-220 words.",
+  "prompt_count": 10,
+  "prompts": [
+    {
+      "prompt_id": "P01",
+      "domain": "procedural_instruction",
+      "text": "Explain how to make a cup of tea for someone who has never done it before."
+    },
+    {
+      "prompt_id": "P02",
+      "domain": "advisory_method",
+      "text": "Describe a time management method for a student preparing for exams."
+    },
+    {
+      "prompt_id": "P03",
+      "domain": "health_explanation",
+      "text": "Explain why regular walking can improve general health."
+    },
+    {
+      "prompt_id": "P04",
+      "domain": "balanced_argument",
+      "text": "Describe the advantages and disadvantages of working from home."
+    },
+    {
+      "prompt_id": "P05",
+      "domain": "civic_explanation",
+      "text": "Explain how a library can help a local community."
+    },
+    {
+      "prompt_id": "P06",
+      "domain": "causal_explanation",
+      "text": "Describe the main causes of traffic congestion in a city."
+    },
+    {
+      "prompt_id": "P07",
+      "domain": "health_explanation",
+      "text": "Explain the importance of sleep for mental performance."
+    },
+    {
+      "prompt_id": "P08",
+      "domain": "procedural_advisory",
+      "text": "Describe how to prepare for a job interview."
+    },
+    {
+      "prompt_id": "P09",
+      "domain": "causal_explanation",
+      "text": "Explain why recycling systems often fail in practice."
+    },
+    {
+      "prompt_id": "P10",
+      "domain": "balanced_argument",
+      "text": "Describe the benefits and drawbacks of online learning."
+    }
+  ],
+  "notes": "Prompts must be finalised and frozen before any samples are collected. Once a prompt text is set, it must not be altered. Domain field is free text — use a consistent taxonomy across all prompts."
+}

@@ -1,0 +1,19 @@
+{
+  "run_id": "2026-04-25T16:06:37.477667+00:00",
+  "sealed_at": "2026-04-25T16:06:49.716309+00:00",
+  "spec_id": "SCAR_AI_AUTH_DS01_MEASUREMENT_SPEC",
+  "spec_sha256": "f84e335c0ca3f01d255aabc2f844852e15bc5e3366a7fbc31f2cb178843c07ba",
+  "null_model_id": "DS01_WITHIN_SAMPLE_TOKEN_SHUFFLE_V1",
+  "rng_seed_base": 1337,
+  "class_rng_seed": 7331,
+  "null_samples_per_text": 1000,
+  "samples_processed": 40,
+  "dataset_decision": "PASS",
+  "artefact_hashes": {
+    "sample_feature_table.json": "697a497c2c945cc61d555fc98c3afa176377f64f8df2a9c2ab2f4c6a7c0a0814",
+    "sample_null_summary.json": "a466cd2e11c370d3ffccfadfcc06219f98c8c265177a02eaaaa1a992c6a363dd",
+    "class_comparison.json": "6f9d890d3c7757c1001f9ad18a684cd22d36bebf059cbd2ad3a7537f5c2004b9",
+    "COMPLIANCE_REPORT.json": "bc2eec56003ccbf7b954c8c32509f4cdd80748a1a61f844bdc7e4e2c499aa2c1"
+  },
+  "note": "run_id and sealed_at are excluded from rerun comparison per spec."
+}
