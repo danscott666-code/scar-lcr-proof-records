@@ -1,0 +1,129 @@
+{
+  "dataset_id": "SCAR_AI_AUTH_DS01",
+  "dataset_version": "1.8",
+  "file_role": "DATASET_MANIFEST",
+  "schema_version": "1.0",
+  "status": "COLLECTION_COMPLETE_RESULTS_VERIFIED",
+  "creation_date": "2026-04-09",
+  "created_by": "Danny Scott",
+  "dataset_purpose": "Transfer proof of LCR coherence detection from scripture domain to AI-vs-human text classification domain. Establish baseline coherence signatures for human-authored and AI-generated responses under controlled, prompt-matched conditions.",
+  "validator_binding": {
+    "validator_file": "scar_validator_v1_0_P27_T2.py",
+    "validator_sha256": "7da40937cfa70524484498be5755e760a8915ab79cc915c5b80e6a884ed2f8f8",
+    "note": "All compliance checks must be run under this exact validator version. Any rerun on a different validator version voids SCAR compliance status."
+  },
+  "execution_scope": {
+    "mode": "full",
+    "pilot_prompts": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05"
+    ],
+    "pilot_sample_total": 20,
+    "pilot_human_samples": 10,
+    "pilot_ai_samples": 10,
+    "full_prompts": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10"
+    ],
+    "full_sample_total": 40,
+    "full_human_samples": 20,
+    "full_ai_samples": 20,
+    "note": "Pilot (P01-P05, 20 samples) completed and verified. Full dataset (P01-P10, 40 samples) completed and verified. Both runs confirmed deterministic across three independent executions."
+  },
+  "corpus_structure": {
+    "total_samples": 40,
+    "human_samples": 20,
+    "ai_samples": 20,
+    "prompt_count": 10,
+    "samples_per_prompt": 4,
+    "human_samples_per_prompt": 2,
+    "ai_samples_per_prompt": 2,
+    "target_word_count_min": 180,
+    "target_word_count_max": 220
+  },
+  "measurement_spec_binding": {
+    "measurement_spec_file": "SCAR_AI_AUTH_DS01_MEASUREMENT_SPEC_v1.1.json",
+    "measurement_spec_sha256": "f84e335c0ca3f01d255aabc2f844852e15bc5e3366a7fbc31f2cb178843c07ba",
+    "null_model_status": "FROZEN",
+    "feature_family_status": "FROZEN",
+    "decision_rule_status": "FROZEN",
+    "note": "No feature, null model parameter, threshold, or decision rule may be changed after collection starts."
+  },
+  "ai_model": {
+    "model_identifier": "GPT-5.3 Instant",
+    "provider": "OpenAI",
+    "interface": "ChatGPT App",
+    "version_capture_method": "interface-reported",
+    "timestamp_of_first_use": "2026-04-10T05:00:00Z",
+    "temperature": "default \u2014 not user-configurable in ChatGPT app interface",
+    "top_p": "default \u2014 not user-configurable in ChatGPT app interface",
+    "system_prompt": "none",
+    "session_policy": "fresh session per generation",
+    "note": "GPT-4o retired from ChatGPT February 2026. Model selected as Instant in ChatGPT app, which maps to GPT-5.3 Instant per current OpenAI documentation. Version pinning is interface-reported, not API-enforced. Temperature and top_p are not user-configurable in the app interface and are recorded as default.",
+    "format_instruction": "All AI prompts appended with: Write your response as continuous prose only, approximately 200 words. Do not use lists, headings, bullet points, or images. See protocol v1.2 \u00a74.2."
+  },
+  "human_sources": {
+    "recruitment_method": "dataset creator self-contribution for full dataset",
+    "anonymisation_status": "author identity known to creator \u2014 declared limitation",
+    "collection_notes": "All 20 human samples written by dataset creator (Danny Scott) via voice dictation. Dictation mode may produce higher sentence-initial token recurrence than typed prose. Flagged as potential covariate for DS02 design.",
+    "note": "Single-author human samples are a declared methodological limitation. DS02 will use minimum 5 independent human authors blind to the research hypothesis. No attempt is made to claim population-level representativeness from DS01 human samples."
+  },
+  "file_inventory": {
+    "SCAR_AI_AUTH_DS01_PROMPTS.json": "8d02b9d64dd0119c40806bf8c9f1853436554b8ccdf08f3983ca8afeaa91ce8b",
+    "SCAR_AI_AUTH_DS01_MEASUREMENT_SPEC_v1.1.json": "f84e335c0ca3f01d255aabc2f844852e15bc5e3366a7fbc31f2cb178843c07ba",
+    "SCAR_AI_AUTH_DS01_sample_index.json": "3fa20722de1c2e1b23132a7a07bdabccd6f77be8173029b02976b08584afbab4",
+    "SHA256_SUMS.txt": "0383bb29196aef30ca2675cb99501a24464bca403ef9bef1c493169a14984d2a",
+    "SCAR_AI_AUTH_DS01_COLLECTION_PROTOCOL_v1.2.txt": "72e552828982b95943dc241b70cba7629d6de07811de787acd78613ca2a930ed",
+    "SCAR_AI_AUTH_DS01_README_v1.3.txt": "44ed0d6d4294ac221be020e9a4d67adad5526823d19b5119c54109d15a03a051",
+    "SCAR_AI_AUTH_DS01_FULL_40SAMPLE_COMPLIANCE_REPORT.json": "bc2eec56003ccbf7b954c8c32509f4cdd80748a1a61f844bdc7e4e2c499aa2c1",
+    "SCAR_AI_AUTH_DS01_FULL_40SAMPLE_class_comparison.json": "6f9d890d3c7757c1001f9ad18a684cd22d36bebf059cbd2ad3a7537f5c2004b9",
+    "SCAR_AI_AUTH_DS01_FULL_40SAMPLE_EXECUTION_BOUNDARY.lock.json": "5db53e881410397df1b4f3fa5673a93ff1b6f695c368a31f62c6cab929d3a7cd"
+  },
+  "scar_compliance": {
+    "status": "PASS",
+    "audit_grade_ready": true,
+    "hostile_audit_ready": true,
+    "samples_processed": 40,
+    "samples_admissible": 40,
+    "class_a_violations": 0,
+    "class_b_violations": 0,
+    "human_theta_mean": 2.845704,
+    "ai_theta_mean": 1.357363,
+    "observed_difference": 1.488341,
+    "p_value": 0.0008,
+    "significant": true,
+    "permutation_samples": 10000,
+    "last_validation_run": "2026-04-27",
+    "pipeline_file": "scar_ds01_pipeline_CANONICAL.py",
+    "pipeline_sha256": "989e02da6aaf60f817e4919f9ac8eda521c02bda4c4987083ac49873083c25e6",
+    "determinism_confirmed": true,
+    "independent_runs": 3,
+    "note": "Result confirmed across three independent executions: local Claude environment, Replit run 1, Replit run 2. All theta values and p-value identical across runs."
+  },
+  "notes": "Manifest v1.8. DS01 collection complete. Full 40-sample run verified. GitHub anchor recorded. All four declared limitations on record. Human sources block populated. SCAR compliance block updated with final results. README updated to v1.3. Status updated to COLLECTION_COMPLETE_RESULTS_VERIFIED.",
+  "github_anchor": {
+    "repository": "github.com/danscott666-code/scar-lcr-proof-records",
+    "commit_sha": "2964d6d145ecafb9c782e7230b6afa617e83e96d",
+    "commit_message": "Add DS01 README",
+    "commit_date": "2026-04-27",
+    "status": "PUBLIC",
+    "note": "This commit SHA is the tamper-evident anchor for DS01. Any reproduction or audit should verify against this commit."
+  },
+  "declared_limitations": {
+    "limitation_1_independence": "Samples are not fully independent. Two instances per prompt per condition share task context. The permutation test assumes independence. The p=0.0008 result should be interpreted with this caveat.",
+    "limitation_2_model_specificity": "All 20 AI samples generated by GPT-5.3 Instant via ChatGPT app. Finding is currently model-specific. DS02 must include at least one additional AI system before any model-agnostic generalisation claim can be supported.",
+    "limitation_3_single_author": "All 20 human samples written by dataset creator. This is a known methodological limitation. DS02 will recruit minimum 5 independent human authors blind to the research hypothesis.",
+    "limitation_4_no_individual_threshold": "DS01 establishes group-level separation only. Individual classification thresholds have not been derived. Threshold derivation is a DS02 task and will be pre-registered before DS02 collection begins."
+  }
+}
