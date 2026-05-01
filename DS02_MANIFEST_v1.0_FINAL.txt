@@ -1,0 +1,523 @@
+═══════════════════════════════════════════════════════════════════════════════
+SCAR / LCR — DS02 MANIFEST AND PRE-REGISTRATION
+DS02_MANIFEST_v1.0
+Status: FINAL — frozen
+Author: Danny Scott, 2026
+═══════════════════════════════════════════════════════════════════════════════
+
+
+
+
+1. PURPOSE AND SCOPE
+────────────────────
+This document constitutes the full pre-registration manifest for Dataset 02
+(DS02) of the SCAR / LCR research programme. It defines the study design,
+participant criteria, AI model selection, prompt set, collection protocol,
+measurement protocol, statistical analysis plan, and integrity anchoring
+procedures.
+
+
+This manifest must be frozen (SHA-256 hashed and publicly anchored) before
+any data collection begins. Data collection begins when the first human or AI
+sample is generated or recorded. No amendment to this manifest is permitted
+after freezing.
+
+
+This study builds on DS01 but is independently designed. No DS01 behaviour is
+relied upon implicitly. DS01 demonstrated a statistically significant
+group-level separation between human and AI theta scores (p = 0.0008) in a
+single-author, single-model context. DS02 is designed to replicate and extend
+that finding under a more rigorous, multi-author, multi-model protocol.
+
+
+
+
+2. RESEARCH QUESTION
+─────────────────────
+Does SCAR coherence scoring (theta) produce a statistically significant
+group-level separation between human-authored and AI-generated text under
+conditions of author independence, model diversity, and controlled prompt
+administration?
+
+
+Primary outcome: group-level separation, not individual classification.
+Coherence threshold is not a classification boundary. See Section 7 and the
+frozen threshold pre-registration (DS02_THRESHOLD_PREREG_v1.0,
+SHA: 68d8df9a9d1f553ea20987d99ce5b72cb11ed4e09ce69c02f2188701e8554ebf).
+
+
+
+
+3. LINEAGE AND FROZEN DEPENDENCIES
+────────────────────────────────────
+The following artefacts are frozen prior to this manifest and govern
+measurement. They must not be modified.
+
+
+  Canonical specification:
+    LCR_SCAR_CANONICAL_v1.0_FINAL.txt
+    SHA: 93218bad0c770653bd7558dd20c8f7801aae76bdf064e0a24654b22aa806ee65
+
+
+  Validator:
+    scar_validator_v1_0_P27_T2.py
+    SHA: 7da40937cfa70524484498be5755e760a8915ab79cc915c5b80e6a884ed2f8f8
+    Rules: P01–P27 + Tier2-F1 + Tier2-F2 (39 rules, 1827 lines)
+
+
+  Canonical pipeline:
+    scar_ds01_pipeline_CANONICAL.py
+    SHA: 989e02da6aaf60f817e4919f9ac8eda521c02bda4c4987083ac49873083c25e6
+
+
+  Measurement specification:
+    SCAR_AI_AUTH_DS01_MEASUREMENT_SPEC_v1.1
+    SHA: f84e335c0ca3f01d255aabc2f844852e15bc5e3366a7fbc31f2cb178843c07ba
+
+
+  Threshold pre-registration:
+    DS02_THRESHOLD_PREREG_v1.0
+    SHA: 68d8df9a9d1f553ea20987d99ce5b72cb11ed4e09ce69c02f2188701e8554ebf
+    GitHub commit: a4cdaeeeac3f569860434e369da549a4ae9b2aa5
+
+
+  GitHub repository:
+    danscott666-code/scar-lcr-proof-records
+
+
+All measurements in DS02 are produced by the frozen validator and pipeline
+above. No ad hoc modifications are permitted.
+
+
+
+
+4. PARTICIPANTS — HUMAN AUTHORS
+─────────────────────────────────
+4.1 Minimum number: 5
+4.2 Each author must be independent — no collaboration between authors
+    during or prior to data collection.
+4.3 Authors must be blind to the study hypothesis at time of writing.
+    Specifically: authors must not be informed that coherence, structural
+    patterning, or authorship detection is being measured.
+4.4 Authors must represent varied backgrounds (occupational, educational,
+    or demographic). A convenience sample drawn exclusively from a single
+    community or profession is not admissible.
+4.5 No author may see another author's responses before submitting their own.
+4.6 Prompts must not be disclosed to authors prior to the collection session.
+4.7 The study administrator (Danny Scott) is excluded as a human author.
+    This eliminates the single-author limitation declared in DS01.
+4.8 Author identities will be anonymised in all published artefacts.
+    Internal mapping (author ID to identity) will be retained securely by
+    the study administrator and not published.
+
+
+
+
+5. PARTICIPANTS — AI MODELS
+────────────────────────────
+5.1 Minimum number: 4 model families
+5.2 Model families designated for DS02:
+
+
+    FAMILY A: OpenAI (GPT)
+      Model: gpt-4.1-2025-04-14
+      Selection note: GPT-4o was found to be deprecated in the OpenAI
+      API at the time of DS02 manifest preparation and is not suitable
+      for use. GPT-4.1 (pinned snapshot gpt-4.1-2025-04-14) was
+      selected as the current stable non-deprecated replacement. This
+      decision is declared here as part of the audit trail.
+
+
+    FAMILY B: Anthropic (Claude)
+      Model: claude-sonnet-4-6
+      Versioning note: Anthropic model strings are versioned by provider
+      and do not expose public date-stamped snapshots in the same format
+      as other families. The exact model string and full API request and
+      response logs are retained per §5.4 to ensure reproducibility.
+
+
+    FAMILY C: Google (Gemini)
+      Model: gemini-2.5-flash
+      Selection note: gemini-1.5-pro-001 (originally planned) is no
+      longer available — all requests return 404 as of 2026. gemini-2.5-
+      flash is selected as the current stable non-deprecated replacement.
+      Google's own documentation designates gemini-2.5-flash as the
+      stable production string; no date-pinned snapshot is separately
+      published. This is declared as a design distinction from the other
+      three model families where date-pinned strings are used.
+      Gemini-specific parameter (binding): thinking must be explicitly
+      disabled for all DS02 collection calls. The collection script must
+      pass thinking_budget=0 (or equivalent per current API). Failure
+      to disable thinking constitutes a collection protocol violation
+      under §5.7 as it would produce structurally different output
+      inconsistent with standard prose generation across model families.
+
+
+    FAMILY D: xAI (Grok)
+      Model: grok-4-20-0309-non-reasoning
+      Selection note: grok-2-1212 (originally planned) is not available
+      through the xAI API at the time of DS02 manifest preparation.
+      grok-4-20-0309-non-reasoning is selected as the current available
+      non-reasoning replacement. The non-reasoning variant is required
+      for structural consistency with the other three model families —
+      reasoning-mode models produce structurally different output
+      inconsistent with standard prose generation. The date component
+      (0309, March 2026) constitutes the version pin. This version
+      change from the original plan is declared here as part of the
+      audit trail.
+      Declared limitation: Grok-4 is a recently released model at the
+      time of DS02 data collection. Its generation characteristics and
+      structural properties are less documented in the public literature
+      than the other three model families. This is acknowledged as a
+      limitation and will be reported in the DS02 artefact pack.
+
+
+5.3 Version pinning is mandatory. Each model must be accessed via API with
+    an explicit version string. No frontier/latest aliases permitted.
+5.4 All API requests must be logged in full (request body, response body,
+    timestamp, model string). Logs form part of the sealed artefact pack.
+5.5 Context is cleared between samples. No carry-over of prior responses
+    within or across prompts for any model.
+5.6 System prompt: none, unless identical across all four models, declared
+    here, and included verbatim in the sealed logs.
+5.7 Temperature and other generation parameters must be declared and held
+    constant across all models to the extent the respective APIs permit.
+    Where a parameter cannot be matched across models (e.g. a parameter
+    supported by one API but absent in another), the divergence must be
+    explicitly logged in the collection log, including: the parameter name,
+    the value used or its absence, and the affected model. Any such
+    divergence is reported as a limitation in the final artefact pack.
+    Undeclared parameter divergence constitutes a collection protocol
+    violation.
+
+
+    Generation parameters (frozen):
+      Temperature: 0.7
+      Max tokens:  400
+      top_p:       1.0
+      Other:       NONE
+
+
+    DS01 / DS02 parameter distinction (declared):
+      DS01 used the ChatGPT web app interface where temperature was not
+      user-configurable. DS01 manifest recorded: "temperature: default —
+      not user-configurable in ChatGPT app interface." DS02 uses direct
+      API access with temperature explicitly set to 0.7. This difference
+      is declared as a design distinction between DS01 and DS02 and does
+      not constitute a protocol violation. Temperature 0.7 was selected
+      in preference to lower values to avoid artificial within-model
+      consistency that could confound coherence measurement. The hard
+      180–220 word exclusion boundary (§9.1) applies without exception
+      regardless of temperature-induced word count variance.
+
+
+5.8 Model independence caveat: full training-data independence between
+    model families cannot be guaranteed. Provider diversity is used as a
+    practical approximation. This limitation is declared on the record.
+
+
+
+
+6. PROMPTS
+───────────
+6.1 Total prompts: 5
+6.2 Composition: 3 expository, 2 experiential
+6.3 All prompts are frozen in this manifest. No prompt may be modified,
+    substituted, or supplemented after freezing.
+6.4 Experiential prompts require personal or first-person knowledge.
+    The experiential confound (AI models cannot draw on genuine personal
+    experience) is declared as a known asymmetry and reported limitation.
+6.5 Prompts are not disclosed to human authors before the collection session.
+
+
+PROMPT 01 — EXPOSITORY
+  "Describe how a complex system you are familiar with maintains reliability
+   under failure conditions. Focus on the structural principles involved,
+   not a specific named product or service."
+
+
+PROMPT 02 — EXPOSITORY
+  "Explain the relationship between structure and meaning in written
+   communication. How does the organisation of a piece of writing affect
+   what it conveys beyond its explicit content?"
+
+
+PROMPT 03 — EXPOSITORY
+  "What distinguishes a well-designed process from a poorly designed one?
+   Answer in terms of principles rather than examples."
+
+
+PROMPT 04 — EXPERIENTIAL
+  "Describe a time when you had to make a decision with incomplete
+   information. What did the process of deciding feel like, and what did
+   you learn from it?"
+
+
+PROMPT 05 — EXPERIENTIAL
+  "Describe a situation in which you understood something for the first
+   time that you had previously only known intellectually. What changed,
+   and why did it matter?"
+
+
+6.6 Pre-declared sample size imbalance: the design produces 25 human samples
+    (5 authors × 5 prompts) and 20 AI samples (4 model families × 5 prompts).
+    This imbalance is a known and deliberate consequence of the design
+    parameters. The two-sample permutation test handles unequal group sizes
+    correctly without modification. The imbalance is declared here as a
+    pre-registered design feature, not a collection artefact.
+6.7 Word count constraint: 180–220 words per response (inclusive).
+    The admissibility rule is defined in Section 9.1.
+
+
+
+
+7. PRIMARY OUTCOME
+───────────────────
+7.1 Measure: SCAR coherence score (theta), computed by the frozen validator
+    and pipeline per Section 3.
+7.2 Test: two-sample permutation test (human vs AI), two-sided,
+    as specified in DS02_THRESHOLD_PREREG_v1.0 (Section 5).
+    Test statistic: difference in mean theta between groups (human minus AI).
+    The threshold pre-registration is the higher-authority document on test
+    specification. This manifest does not and cannot supersede it.
+    Directional expectation (declared, non-binding): on the basis of the
+    DS01 finding (human theta > AI theta, p = 0.0008), a positive direction
+    is expected. This expectation is declared for transparency only. The
+    test remains two-sided and the significance threshold applies to the
+    two-sided p-value without modification.
+7.3 Significance threshold: p < 0.05, two-sided, as pre-registered in
+    DS02_THRESHOLD_PREREG_v1.0 (see Section 3).
+7.4 Unit of analysis: individual sample theta scores.
+7.5 Interpretation constraint: a significant result supports group-level
+    separation only. No individual sample is classified as human or AI.
+    The coherence threshold is not a classification boundary.
+
+
+
+
+8. SECONDARY MEASURES (PRE-REGISTERED)
+────────────────────────────────────────
+The following secondary measures are pre-registered. They are exploratory
+and do not affect the primary outcome determination.
+
+
+8.1 Within-author Jaccard bigram overlap
+    Computed across all 5 responses per human author and per AI model.
+    Purpose: assess stylistic consistency within-condition.
+
+
+8.2 Cross-author structural comparison
+    Pairwise structural divergence between human authors.
+    Purpose: assess within-group variability.
+
+
+8.3 Human vs AI structural divergence
+    Pairwise structural divergence between human and AI conditions.
+    Purpose: characterise separation beyond theta.
+
+
+    Definition (applies to §8.2 and §8.3): structural divergence is
+    computed using the same feature space as theta, excluding the scalar
+    aggregation step. It quantifies the distance between structural
+    profiles of two samples or groups within the LCR/SCAR framework.
+
+
+8.4 Blind human evaluation
+    Minimum 3 raters, majority vote.
+    Raters are blind to: theta scores, model identity, system outputs.
+    Tie-breaking rule: tie = NON-COHERENT.
+    Purpose: external validation of SCAR coherence scoring.
+
+
+
+
+9. ADMISSIBILITY RULES
+───────────────────────
+9.1 Word count: the 180–220 word constraint is a hard exclusion boundary.
+    Any response with a word count outside this range is excluded without
+    exception and logged with its actual word count. No discretionary
+    admission window applies. This rule is applied before unblinding theta
+    scores.
+9.2 Incomplete responses: any response that does not address the prompt
+    are excluded and logged with reason.
+9.3 Refusals: any AI refusal to respond is logged as a non-response and
+    excluded. A model with more than one refusal across 5 prompts is
+    flagged as an anomaly in the report. Human non-response is not
+    applicable under supervised individual collection conditions; a human
+    author who does not submit a response is treated as a withdrawn
+    participant and their full sample set is excluded. If withdrawal
+    reduces the admitted human author count below the pre-registered
+    minimum of 5, the study is terminated and not executed until the
+    shortfall is resolved through recruitment of a replacement author
+    under the same protocol conditions, logged as a Gate 3 reset.
+9.4 Collection violations: any breach of the protocol in Section 10
+    (e.g. context not cleared, prompt disclosed in advance) invalidates
+    the affected sample. Invalidated samples are excluded and logged.
+9.5 All admissibility decisions are made and logged before pipeline
+    execution begins.
+
+
+
+
+10. COLLECTION PROTOCOL
+────────────────────────
+10.0 Collection order (binding)
+     All human samples must be collected, admitted, and logged before
+     any AI prompt is submitted to any model. Human collection precedes
+     AI collection in full. This order is maintained for consistency
+     with DS01 (SCAR_AI_AUTH_DS01_COLLECTION_PROTOCOL_v1.2, Section 3
+     preceding Section 4, with explicit prompt-level ordering
+     H01→H02→A01→A02) and may not be varied without a pre-registered
+     amendment to this manifest. No parallelisation of human and AI
+     collection is permitted. A breach of this order invalidates all
+     AI samples collected before human collection was complete.
+
+
+10.1 Human collection
+     a. Authors are contacted individually. No group session.
+     b. Prompts are presented sequentially. Authors may not revisit a
+        prior response after moving to the next prompt.
+     c. No time limit is imposed.
+     d. Authors submit responses in any plain text format.
+     e. The administrator assigns each response an anonymised sample ID
+        immediately upon receipt, before any measurement.
+     f. SHA-256 hash is computed for each response file upon receipt and
+        recorded in the collection log.
+
+
+10.2 AI collection
+     a. Each prompt is submitted to each model via API in a fresh context.
+     b. Request and response are logged in full per Section 5.4.
+     c. Generation parameters are held constant per Section 5.7.
+     d. Each response is saved as a discrete file, assigned a sample ID,
+        and SHA-256 hashed immediately upon generation.
+
+
+10.3 Collection log
+     The collection log records, for every sample:
+       - Sample ID
+       - Condition (HUMAN or AI)
+       - Author ID or model string
+       - Prompt number
+       - Timestamp
+       - Word count
+       - SHA-256 hash of response file
+       - Admissibility status and any notes
+     The collection log is sealed before pipeline execution.
+
+
+10.4 Blinding
+     The study administrator processes all samples using anonymised IDs
+     only. Condition labels (HUMAN / AI) are not used as inputs to the
+     pipeline. Unblinding occurs only after all theta scores are computed
+     and logged.
+
+
+
+
+11. PIPELINE EXECUTION
+───────────────────────
+11.1 The canonical pipeline (SHA: 989e02da6aaf60f817e4919f9ac8eda521c02bda4c4987083ac49873083c25e6) is executed against the
+     admitted sample set.
+11.2 All six pipeline artefacts are produced per the canonical specification.
+11.3 The pipeline is executed once. No re-runs with parameter variation are
+     permitted unless a reproducibility fault is detected and logged.
+11.4 All artefacts are SHA-256 hashed on production and recorded in the
+     DS02 sealed artefact log.
+
+
+
+
+12. STATISTICAL ANALYSIS
+─────────────────────────
+12.1 Primary test: two-sample permutation test as specified in Section 7.
+     Permutation distribution is generated by random label reassignment
+     without replacement across the fixed sample set.
+     Null hypothesis: labels (HUMAN, AI) are exchangeable under the null
+     of no group-level difference in theta. Exchangeability is applied
+     at the sample level under fixed generation conditions and does not
+     imply independence at the author or model level; clustering by
+     author and model is treated as observed structure and assessed via
+     pre-registered cross-checks.
+     No stratification or blocking is applied; permutation is performed
+     across the full sample set.
+12.2 Number of permutations: 100,000. Random seed: 1337 (fixed for
+     reproducibility). The seed and permutation count are frozen here and
+     must not be varied between runs.
+12.3 Secondary descriptive statistics: mean theta, standard deviation,
+     and range per condition (human, and per AI model family).
+12.4 No post-hoc subgroup analyses are pre-registered. Any exploratory
+     subgroup analysis is labelled explicitly as exploratory in the report.
+12.5 Multiple comparisons: the primary test is a single pre-registered
+     comparison. No correction is applied to the primary outcome.
+     Secondary measures are reported descriptively.
+
+
+
+
+13. DEFERRED TO DS03
+─────────────────────
+The following are out of scope for DS02 and deferred:
+  - Multilingual extension
+  - Hallucination detection branch (requires separate design)
+
+
+
+
+14. DECLARED LIMITATIONS
+─────────────────────────
+14.1 Model independence: full training-data independence between AI model
+     families cannot be guaranteed. Provider diversity is used as a
+     practical approximation.
+14.2 Experiential confound: experiential prompts (P04, P05) introduce a
+     structural asymmetry. AI models cannot draw on genuine personal
+     experience. This confound is declared and will be reported.
+14.3 Human sample size: 5 authors is the pre-registered minimum. Results
+     are interpreted at group level only.
+14.4 Author diversity: authors are drawn from the study administrator's
+     network. Demographic range is limited and declared.
+14.5 Single administrator: all collection, anonymisation, and pipeline
+     execution is performed by one person (Danny Scott). No independent
+     verification of collection protocol is available at this stage.
+
+
+
+
+15. INTEGRITY AND ANCHORING
+────────────────────────────
+15.1 This manifest (DS02_MANIFEST_v1.0) must be SHA-256 hashed in its
+     final frozen form before data collection begins.
+15.2 The manifest hash must be committed to the public GitHub repository:
+     danscott666-code/scar-lcr-proof-records
+     prior to data collection. The commit hash constitutes the public
+     anchor.
+15.3 No amendment to this manifest is permitted after anchoring.
+15.4 All sealed artefacts produced during DS02 (collection log, response
+     files, pipeline outputs) will be committed to the same repository
+     upon completion.
+
+
+
+
+16. PLACEHOLDERS — STATUS AT FREEZE
+─────────────────────────────────────
+All placeholders are now filled. No items remain open.
+
+
+  [✓] Section 5.2 — GPT model string: gpt-4.1-2025-04-14
+  [✓] Section 5.2 — Claude model string: claude-sonnet-4-6
+  [✓] Section 5.2 — Gemini model string: gemini-2.5-flash
+  [✓] Section 5.2 — Grok model string: grok-4-20-0309-non-reasoning
+  [✓] Section 5.7 — Generation parameters: temperature 0.7 /
+        max_tokens 400 / top_p 1.0
+
+
+No section is open. No further amendment is permitted.
+
+
+
+
+═══════════════════════════════════════════════════════════════════════════════
+END OF DS02_MANIFEST_v1.0_FINAL
+Status: FROZEN — SHA-256 hash and GitHub commit required to complete Gate 1
+═══════════════════════════════════════════════════════════════════════════════
